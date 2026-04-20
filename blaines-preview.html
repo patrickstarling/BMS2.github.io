@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blaine's Motor Supply — Rebuilt Engines & Machine Shop | Dallas, TX</title>
+<meta name="description" content="Family-owned rebuilt engines, engine parts, and full-service automotive machine shop in Dallas, Texas. BBB Accredited since 1997. Domestic & foreign engines." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* ============================================
+   Blaine's Motor Supply — Modern Rebuild
+   Dark / red / industrial
+   ============================================ */
+
+:root {
+  --bg:            #0b0707;
+  --bg-2:          #120a0a;
+  --bg-3:          #1a0d0d;
+  --panel:         #170c0c;
+  --surface:       #1e1010;
+  --line:          #2a1414;
+  --line-2:        #3a1a1a;
+
+  --red:           #c8161d;
+  --red-bright:    #ff2d34;
+  --red-deep:      #8a0e13;
+  --red-glow:      rgba(200, 22, 29, 0.35);
+
+  --fg:            #f2ede5;
+  --fg-2:          #cfc6ba;
+  --fg-3:          #8a7f72;
+  --muted:         #6b5f55;
+
+  --display: 'Barlow Condensed', 'Oswald', Impact, sans-serif;
+  --head:    'Oswald', 'Barlow Condensed', Impact, sans-serif;
+  --mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --body:    'Oswald', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --container: 1240px;
+  --radius: 2px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-weight: 400;
+  line-height: 1.55;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================
+   TOP BAR
+   ============================================ */
+.topbar {
+  background: #000;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--head);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--fg-3);
+  text-transform: uppercase;
+}
+.topbar-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 9px 24px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.topbar-item { display: inline-flex; align-items: center; gap: 8px; }
+.topbar-sep { color: var(--red); }
+.dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--red-bright);
+  box-shadow: 0 0 8px var(--red-glow);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* ============================================
+   HEADER / NAV
+   ============================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11, 7, 7, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow 0.2s ease;
+}
+.site-header.is-scrolled {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+}
+.header-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--fg);
+}
+.brand-mark {
+  width: 40px; height: 40px;
+  color: var(--red-bright);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  transition: transform 0.5s ease;
+}
+.brand:hover .brand-mark { transform: rotate(90deg); }
+.brand-text { display: flex; flex-direction: column; line-height: 1; }
+.brand-name {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+}
+.brand-sub {
+  font-family: var(--head);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  color: var(--fg-3);
+  margin-top: 4px;
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+  font-family: var(--head);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.nav-desktop a {
+  padding: 10px 14px;
+  color: var(--fg-2);
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-desktop a::after {
+  content: '';
+  position: absolute;
+  left: 14px; right: 14px;
+  bottom: 6px;
+  height: 1px;
+  background: var(--red-bright);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-desktop a:hover { color: var(--fg); }
+.nav-desktop a:hover::after { transform: scaleX(1); }
+
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 22px;
+  font-family: var(--head);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+  box-shadow: 0 0 0 0 var(--red-glow);
+}
+.btn-primary:hover {
+  background: var(--red-bright);
+  border-color: var(--red-bright);
+  box-shadow: 0 0 24px var(--red-glow);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--line-2);
+}
+.btn-ghost:hover {
+  border-color: var(--red);
+  color: var(--red-bright);
+}
+.btn-call {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--line-2);
+  padding: 11px 16px;
+  font-size: 13px;
+}
+.btn-call:hover { border-color: var(--red); color: var(--red-bright); }
+.btn-full { width: 100%; }
+
+.nav-toggle {
+  display: none;
+  width: 40px; height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+}
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--fg);
+  transition: transform 0.25s, opacity 0.25s;
+}
+.nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  padding: 0 24px 20px;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+.nav-mobile a {
+  font-family: var(--head);
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg-2);
+}
+.nav-mobile a:last-child { border: 0; }
+.nav-mobile-call {
+  margin-top: 12px;
+  background: var(--red);
+  color: #fff !important;
+  text-align: center;
+  border: 0 !important;
+  padding: 16px !important;
+  border-radius: var(--radius);
+}
+.site-header.is-menu-open .nav-mobile { display: flex; }
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  padding: 90px 24px 100px;
+  overflow: hidden;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200,22,29,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,22,29,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 70% 40%, rgba(0,0,0,0.9), transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 70% 40%, rgba(0,0,0,0.9), transparent 70%);
+}
+.hero-glow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 70%;
+  height: 120%;
+  background: radial-gradient(circle, var(--red-glow), transparent 60%);
+  filter: blur(60px);
+  opacity: 0.55;
+}
+.hero-inner {
+  position: relative;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--head);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  margin-bottom: 32px;
+  animation: fadeUp 0.6s ease both;
+}
+.tag-bar {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--red);
+}
+.hero-title {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(56px, 11vw, 168px);
+  line-height: 0.88;
+  letter-spacing: -0.015em;
+  margin: 0 0 32px;
+  text-transform: uppercase;
+  animation: fadeUp 0.8s 0.08s ease both;
+}
+.hero-title .outline {
+  -webkit-text-stroke: 2px var(--red);
+  color: transparent;
+}
+.hero-lede {
+  font-family: var(--body);
+  font-weight: 400;
+  max-width: 640px;
+  font-size: clamp(16px, 1.8vw, 19px);
+  line-height: 1.6;
+  color: var(--fg-2);
+  margin: 0 0 40px;
+  animation: fadeUp 0.8s 0.16s ease both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+  animation: fadeUp 0.8s 0.24s ease both;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 32px;
+  animation: fadeUp 0.8s 0.32s ease both;
+}
+.stat {
+  padding: 8px 24px 8px 0;
+  border-right: 1px solid var(--line);
+}
+.stat:last-child { border-right: 0; }
+.stat-num {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 54px);
+  color: var(--red-bright);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-family: var(--head);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  line-height: 1.4;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.section {
+  padding: 100px 24px;
+  position: relative;
+}
+.section-dark {
+  background: var(--bg-2);
+  border-block: 1px solid var(--line);
+}
+.section-about {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  border-top: 1px solid var(--line);
+}
+.section-contact {
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+}
+
+.section-head { margin-bottom: 56px; }
+.section-head-center { text-align: center; }
+.eyebrow {
+  display: inline-block;
+  font-family: var(--head);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(36px, 5.5vw, 72px);
+  line-height: 0.96;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.section-title .muted { color: var(--fg-3); }
+
+/* ============================================
+   CAPABILITIES
+   ============================================ */
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.capability {
+  padding: 40px 32px;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  position: relative;
+  transition: background 0.3s ease;
+  display: block;
+  color: var(--fg);
+}
+.capability:last-child { border-right: 0; }
+.capability::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; right: 0;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.capability:hover { background: var(--surface); }
+.capability:hover::before { transform: scaleX(1); }
+.capability-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--fg-3);
+  margin-bottom: 24px;
+  letter-spacing: 0.1em;
+}
+.capability h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0 0 14px;
+}
+.capability p {
+  font-size: 15px;
+  color: var(--fg-2);
+  margin: 0 0 28px;
+  line-height: 1.6;
+}
+.capability-link {
+  font-family: var(--head);
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  transition: gap 0.2s;
+}
+
+/* ============================================
+   SERVICES
+   ============================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+}
+.service {
+  padding: 28px 22px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, color 0.2s;
+  background: var(--panel);
+}
+.service:hover {
+  background: var(--red);
+  color: #fff;
+}
+.service:hover .service-idx { color: rgba(255,255,255,0.6); }
+.service-idx {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--red-bright);
+  letter-spacing: 0.08em;
+}
+.services-grid .service:nth-child(4n) { border-right: 0; }
+.services-grid .service:nth-last-child(-n+2) { border-bottom: 0; }
+/* the last row has 14 items / 4 cols → items 13,14 on last row */
+.services-grid .service:nth-child(13),
+.services-grid .service:nth-child(14) { border-bottom: 0; }
+
+.services-footnote {
+  margin: 40px 0 0;
+  font-family: var(--head);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  text-align: center;
+}
+
+/* ============================================
+   MANUFACTURERS
+   ============================================ */
+.mfg-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+}
+.mfg-col {
+  padding: 40px;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+}
+.mfg-col:last-child { border-right: 0; }
+.mfg-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--head);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  margin-bottom: 28px;
+}
+.mfg-dot {
+  width: 8px; height: 8px;
+  background: var(--red);
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+.mfg-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+.mfg-list li {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--line-2);
+  color: var(--fg);
+  transition: color 0.2s, padding-left 0.2s;
+  cursor: default;
+  position: relative;
+}
+.mfg-list li::before {
+  content: '→';
+  position: absolute;
+  left: -20px;
+  color: var(--red);
+  opacity: 0;
+  transition: opacity 0.2s, left 0.2s;
+}
+.mfg-list li:hover {
+  color: var(--red-bright);
+  padding-left: 6px;
+}
+.mfg-list li:hover::before { opacity: 1; left: -14px; }
+
+/* ============================================
+   VENDOR TICKER
+   ============================================ */
+.vendor-strip {
+  background: #000;
+  border-block: 1px solid var(--line);
+  padding: 18px 0;
+  overflow: hidden;
+  position: relative;
+}
+.vendor-strip::before,
+.vendor-strip::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.vendor-strip::before { left: 0;  background: linear-gradient(90deg, #000, transparent); }
+.vendor-strip::after  { right: 0; background: linear-gradient(270deg, #000, transparent); }
+.vendor-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 40s linear infinite;
+}
+.vendor-group {
+  display: flex;
+  gap: 48px;
+  padding-right: 48px;
+  font-family: var(--head);
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  flex-shrink: 0;
+}
+.vendor-group span {
+  position: relative;
+  padding-right: 48px;
+}
+.vendor-group span::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 50%;
+  width: 4px; height: 4px;
+  background: var(--red);
+  transform: translateY(-50%);
+}
+.vendor-group span:last-child::after { display: none; }
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ============================================
+   ABOUT
+   ============================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-copy .section-title { margin-bottom: 32px; }
+.about-copy p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--fg-2);
+  margin: 0 0 20px;
+  max-width: 580px;
+}
+
+.badges {
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  border: 1px solid var(--line-2);
+  background: var(--panel);
+  border-radius: var(--radius);
+}
+.badge-big {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 32px;
+  color: var(--red-bright);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.badge-text {
+  font-family: var(--head);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+  line-height: 1.4;
+}
+
+.about-visual {
+  display: grid;
+  place-items: center;
+}
+.gauge {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1;
+  filter: drop-shadow(0 0 40px var(--red-glow));
+}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 0;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.contact-info {
+  padding: 48px 40px;
+  border-right: 1px solid var(--line);
+  background: #000;
+}
+.info-block { margin-bottom: 36px; }
+.info-block:last-of-type { margin-bottom: 32px; }
+.info-label {
+  font-family: var(--head);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  margin-bottom: 10px;
+}
+.info-value {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--fg);
+  line-height: 1.4;
+}
+.info-value a { color: var(--fg); transition: color 0.2s; }
+.info-value a:hover { color: var(--red-bright); }
+.info-sub {
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--fg-2);
+}
+.info-mono {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--fg-2);
+  font-weight: 500;
+}
+
+.contact-form {
+  padding: 48px 40px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--head);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.contact-form label em {
+  color: var(--red-bright);
+  font-style: normal;
+  margin-left: 3px;
+}
+.contact-form input,
+.contact-form textarea {
+  background: #000;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--fg);
+  letter-spacing: 0;
+  text-transform: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 0;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px var(--red-glow);
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: var(--body);
+}
+.form-full { margin-bottom: 24px; }
+.form-note {
+  font-family: var(--head);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  margin: 16px 0 0;
+  text-align: center;
+}
+.form-note a { color: var(--red-bright); }
+
+.contact-form.submitted .form-note {
+  color: #6dd98a;
+  letter-spacing: 0.14em;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  background: #000;
+  border-top: 1px solid var(--line);
+  color: var(--fg-2);
+}
+.footer-inner {
+  padding: 64px 24px 48px;
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 60px;
+}
+.footer-brand .brand { margin-bottom: 18px; }
+.footer-tag {
+  font-size: 14px;
+  color: var(--fg-3);
+  max-width: 320px;
+  margin: 0;
+  line-height: 1.6;
+}
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.footer-col h4 {
+  font-family: var(--head);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  margin: 0 0 18px;
+}
+.footer-col a,
+.footer-col span {
+  display: block;
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--fg-2);
+  padding: 5px 0;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--red-bright); }
+
+.footer-bar {
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+}
+.footer-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-family: var(--head);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 960px) {
+  .nav-desktop { display: none; }
+  .nav-toggle { display: flex; }
+  .btn-call span { display: none; }
+  .btn-call { padding: 10px; }
+
+  .hero { padding: 60px 24px 70px; }
+  .hero-actions { margin-bottom: 56px; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .stat { padding: 24px 16px; border-bottom: 1px solid var(--line); }
+  .stat:nth-child(2) { border-right: 0; }
+  .stat:nth-last-child(-n+2) { border-bottom: 0; }
+
+  .section { padding: 72px 24px; }
+
+  .capability-grid { grid-template-columns: 1fr; }
+  .capability { border-right: 0; border-bottom: 1px solid var(--line); }
+  .capability:last-child { border-bottom: 0; }
+
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid .service { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .services-grid .service:nth-child(2n) { border-right: 0; }
+  .services-grid .service:nth-last-child(-n+2) { border-bottom: 0; }
+  .services-grid .service:nth-child(13) { border-bottom: 1px solid var(--line); }
+
+  .mfg-wrap { grid-template-columns: 1fr; }
+  .mfg-col { border-right: 0; border-bottom: 1px solid var(--line); padding: 32px 24px; }
+  .mfg-col:last-child { border-bottom: 0; }
+
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .gauge { max-width: 320px; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-info { border-right: 0; border-bottom: 1px solid var(--line); padding: 36px 28px; }
+  .contact-form { padding: 36px 28px; }
+
+  .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px 32px; }
+  .footer-cols { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+}
+
+@media (max-width: 600px) {
+  .topbar-inner { font-size: 10px; gap: 10px; padding: 8px 16px; }
+  .topbar-sep { display: none; }
+
+  .container, .header-inner, .footer-inner { padding-left: 16px; padding-right: 16px; }
+  .hero { padding: 44px 16px 60px; }
+  .section { padding: 56px 16px; }
+
+  .brand-name { font-size: 20px; }
+  .brand-sub { font-size: 9px; }
+
+  .section-head { margin-bottom: 40px; }
+
+  .services-grid { grid-template-columns: 1fr; }
+  .services-grid .service { border-right: 0; border-bottom: 1px solid var(--line); }
+  .services-grid .service:last-child { border-bottom: 0; }
+  .services-grid .service:nth-child(n) { border-right: 0; }
+
+  .mfg-list { grid-template-columns: 1fr; }
+
+  .form-row { grid-template-columns: 1fr; gap: 14px; margin-bottom: 14px; }
+
+  .footer-cols { grid-template-columns: 1fr; }
+
+  .footer-bar-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+  .badge-big { font-size: 26px; }
+  .badge { padding: 14px 16px; }
+
+  .stat-num { font-size: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .vendor-track { animation: none; }
+}
+
+/* Selection */
+::selection { background: var(--red); color: #fff; }
+
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-item"><span class="dot"></span> BBB Accredited Since 1997</span>
+    <span class="topbar-sep">//</span>
+    <span class="topbar-item">Family Owned & Operated</span>
+    <span class="topbar-sep">//</span>
+    <span class="topbar-item">4700 Scyene Rd, Dallas TX</span>
+  </div>
+</div>
+
+<!-- Header / Nav -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M20 6 V20 L30 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="2" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-name">BLAINE'S</span>
+        <span class="brand-sub">MOTOR SUPPLY · EST. 1978</span>
+      </div>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Main navigation">
+      <a href="#engines">Engines</a>
+      <a href="#services">Machine Shop</a>
+      <a href="#manufacturers">Manufacturers</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="tel:+12144264400" class="btn btn-call">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
+        <span>(214) 426-4400</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="#engines">Engines</a>
+    <a href="#services">Machine Shop</a>
+    <a href="#manufacturers">Manufacturers</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+12144264400" class="nav-mobile-call">CALL (214) 426-4400</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <span class="tag-bar"></span>
+      <span>DALLAS, TEXAS · SINCE 1978</span>
+    </div>
+    <h1 class="hero-title">
+      REBUILT<br/>
+      <span class="outline">ENGINES</span><br/>
+      BUILT TO RUN.
+    </h1>
+    <p class="hero-lede">
+      High-quality rebuilt engines for foreign and domestic cars, trucks, marine, and industrial applications. Backed by 40+ years of hands-on experience and a full in-house machine shop.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">
+        REQUEST A QUOTE
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#services" class="btn btn-ghost">OUR SERVICES</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">40+</div>
+        <div class="stat-label">Years<br/>Experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">16</div>
+        <div class="stat-label">Manufacturer<br/>Brands</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">14</div>
+        <div class="stat-label">Machine Shop<br/>Services</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">A+</div>
+        <div class="stat-label">BBB<br/>Accredited</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What we do -->
+<section class="section" id="engines">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">01 — WHAT WE DO</span>
+      <h2 class="section-title">Engines, heads, parts.<br/><span class="muted">Domestic and foreign.</span></h2>
+    </div>
+
+    <div class="capability-grid">
+      <a href="#contact" class="capability">
+        <div class="capability-num">01</div>
+        <h3>Rebuilt Engines</h3>
+        <p>A large in-house inventory of rebuilt engines for cars, trucks, marine, and industrial applications.</p>
+        <span class="capability-link">Inquire →</span>
+      </a>
+      <a href="#contact" class="capability">
+        <div class="capability-num">02</div>
+        <h3>Engine Parts</h3>
+        <p>Top-brand automotive engine parts stocked and ready — pistons, bearings, gaskets, cams, and more.</p>
+        <span class="capability-link">Browse brands →</span>
+      </a>
+      <a href="#services" class="capability">
+        <div class="capability-num">03</div>
+        <h3>Machine Shop</h3>
+        <p>A complete automotive machine shop handling every internal rebuild operation, start to finish.</p>
+        <span class="capability-link">See services →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Machine Shop Services -->
+<section class="section section-dark" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">02 — MACHINE SHOP</span>
+      <h2 class="section-title">In-house machine<br/><span class="muted">shop services.</span></h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service"><span class="service-idx">/01</span><span>Block Preparation</span></div>
+      <div class="service"><span class="service-idx">/02</span><span>Rebore</span></div>
+      <div class="service"><span class="service-idx">/03</span><span>Power Hone</span></div>
+      <div class="service"><span class="service-idx">/04</span><span>Sleeves</span></div>
+      <div class="service"><span class="service-idx">/05</span><span>Pressure Test</span></div>
+      <div class="service"><span class="service-idx">/06</span><span>Install Cam Bearings</span></div>
+      <div class="service"><span class="service-idx">/07</span><span>Balance Jobs</span></div>
+      <div class="service"><span class="service-idx">/08</span><span>Crankshaft Grind</span></div>
+      <div class="service"><span class="service-idx">/09</span><span>Cleaning</span></div>
+      <div class="service"><span class="service-idx">/10</span><span>Heads</span></div>
+      <div class="service"><span class="service-idx">/11</span><span>Basic Valve Jobs</span></div>
+      <div class="service"><span class="service-idx">/12</span><span>Rods</span></div>
+      <div class="service"><span class="service-idx">/13</span><span>Deck Blocks</span></div>
+      <div class="service"><span class="service-idx">/14</span><span>Misc.</span></div>
+    </div>
+
+    <p class="services-footnote">Need something not listed? Call the shop — odds are we've done it.</p>
+  </div>
+</section>
+
+<!-- Manufacturers -->
+<section class="section" id="manufacturers">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">03 — COVERAGE</span>
+      <h2 class="section-title">Manufacturers<br/><span class="muted">we work on.</span></h2>
+    </div>
+
+    <div class="mfg-wrap">
+      <div class="mfg-col">
+        <div class="mfg-label">
+          <span class="mfg-dot"></span>
+          DOMESTIC ENGINES
+        </div>
+        <ul class="mfg-list">
+          <li>American Motors</li>
+          <li>Buick</li>
+          <li>Cadillac</li>
+          <li>Chevrolet</li>
+          <li>Chrysler</li>
+          <li>Ford</li>
+          <li>Oldsmobile</li>
+          <li>Pontiac</li>
+        </ul>
+      </div>
+      <div class="mfg-col">
+        <div class="mfg-label">
+          <span class="mfg-dot"></span>
+          FOREIGN ENGINES
+        </div>
+        <ul class="mfg-list">
+          <li>Honda</li>
+          <li>Hyundai</li>
+          <li>Isuzu</li>
+          <li>Kia</li>
+          <li>Mazda</li>
+          <li>Mitsubishi</li>
+          <li>Nissan</li>
+          <li>Toyota</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vendors ticker -->
+<section class="vendor-strip" aria-label="Parts vendors">
+  <div class="vendor-track">
+    <!-- duplicated for seamless loop -->
+    <div class="vendor-group">
+      <span>CLEVITE</span><span>FEDERAL MOGUL</span><span>SILV-O-LITE</span><span>MELLING</span><span>DURA-BOND</span><span>PROFESSIONAL PRODUCTS</span><span>TOPLINE</span><span>SEALED POWER</span><span>HASTINGS</span><span>SBI</span><span>FEL-PRO</span><span>ELGIN</span><span>KB PERFORMANCE PISTONS</span>
+    </div>
+    <div class="vendor-group" aria-hidden="true">
+      <span>CLEVITE</span><span>FEDERAL MOGUL</span><span>SILV-O-LITE</span><span>MELLING</span><span>DURA-BOND</span><span>PROFESSIONAL PRODUCTS</span><span>TOPLINE</span><span>SEALED POWER</span><span>HASTINGS</span><span>SBI</span><span>FEL-PRO</span><span>ELGIN</span><span>KB PERFORMANCE PISTONS</span>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section section-about" id="about">
+  <div class="container about-grid">
+    <div class="about-copy">
+      <span class="eyebrow">04 — THE SHOP</span>
+      <h2 class="section-title">Second generation.<br/><span class="muted">Same hands-on standard.</span></h2>
+      <p>Founded by Blaine Taylor on more than four decades of experience in the rebuilt-engines trade, Blaine's Motor Supply is a family-owned shop now run day-to-day by second-generation leadership — on the floor, not behind a desk.</p>
+      <p>We stock a large inventory of rebuilt engines, carry top-brand automotive engine parts, and operate a complete automotive machine shop for every internal rebuild need. If it turns, we can work on it.</p>
+
+      <div class="badges">
+        <div class="badge">
+          <div class="badge-big">BBB</div>
+          <div class="badge-text">Accredited<br/>Since 1997</div>
+        </div>
+        <div class="badge">
+          <div class="badge-big">40+</div>
+          <div class="badge-text">Years in<br/>the trade</div>
+        </div>
+        <div class="badge">
+          <div class="badge-big">DFW</div>
+          <div class="badge-text">Serving all of<br/>North Texas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-visual" aria-hidden="true">
+      <div class="gauge">
+        <svg viewBox="0 0 300 300">
+          <defs>
+            <linearGradient id="gaugeGrad" x1="0" x2="1" y1="1" y2="0">
+              <stop offset="0%" stop-color="#3a0a0a"/>
+              <stop offset="60%" stop-color="#c8161d"/>
+              <stop offset="100%" stop-color="#ff4d4d"/>
+            </linearGradient>
+          </defs>
+          <!-- outer ring -->
+          <circle cx="150" cy="150" r="140" fill="none" stroke="#2a0505" stroke-width="2"/>
+          <circle cx="150" cy="150" r="120" fill="none" stroke="#1a0303" stroke-width="1"/>
+          <!-- tick marks -->
+          <g stroke="#e7e3dc" stroke-width="2">
+            <line x1="150" y1="20" x2="150" y2="34"/>
+            <line x1="150" y1="266" x2="150" y2="280"/>
+            <line x1="20" y1="150" x2="34" y2="150"/>
+            <line x1="266" y1="150" x2="280" y2="150"/>
+          </g>
+          <g stroke="#8a7f72" stroke-width="1">
+            <line x1="150" y1="28" x2="150" y2="36" transform="rotate(30 150 150)"/>
+            <line x1="150" y1="28" x2="150" y2="36" transform="rotate(60 150 150)"/>
+            <line x1="150" y1="28" x2="150" y2="36" transform="rotate(120 150 150)"/>
+            <line x1="150" y1="28" x2="150" y2="36" transform="rotate(150 150 150)"/>
+            <line x1="150" y1="28" x2="150" y2="36" transform="rotate(210 150 150)"/>
+            <line x1="150" y1="28" x2="150" y2="36" transform="rotate(240 150 150)"/>
+            <line x1="150" y1="28" x2="150" y2="36" transform="rotate(300 150 150)"/>
+            <line x1="150" y1="28" x2="150" y2="36" transform="rotate(330 150 150)"/>
+          </g>
+          <!-- red arc -->
+          <path d="M 60 240 A 120 120 0 0 1 240 60" fill="none" stroke="url(#gaugeGrad)" stroke-width="12" stroke-linecap="round"/>
+          <!-- needle -->
+          <g transform="rotate(55 150 150)">
+            <line x1="150" y1="150" x2="150" y2="50" stroke="#e7e3dc" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="150" cy="150" r="8" fill="#e7e3dc"/>
+            <circle cx="150" cy="150" r="3" fill="#c8161d"/>
+          </g>
+          <!-- center labels -->
+          <text x="150" y="200" text-anchor="middle" font-family="Oswald" font-size="14" fill="#8a7f72" letter-spacing="2">RPM × 1000</text>
+          <text x="150" y="228" text-anchor="middle" font-family="Oswald" font-size="22" fill="#e7e3dc" letter-spacing="3" font-weight="600">REDLINE</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section section-contact" id="contact">
+  <div class="container">
+    <div class="section-head section-head-center">
+      <span class="eyebrow">05 — GET IN TOUCH</span>
+      <h2 class="section-title">Talk to the shop.</h2>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact info -->
+      <div class="contact-info">
+        <div class="info-block">
+          <div class="info-label">ADDRESS</div>
+          <div class="info-value">4700 Scyene Road<br/>Dallas, Texas 75210</div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-label">PHONE</div>
+          <div class="info-value">
+            <a href="tel:+12144264400">(214) 426-4400</a><br/>
+            <span class="info-sub">Toll-Free: <a href="tel:+18004421638">1-800-442-1638</a></span><br/>
+            <span class="info-sub">Fax: 214-565-7815</span>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-label">HOURS</div>
+          <div class="info-value">
+            Mon – Fri &nbsp; <span class="info-mono">8:00 AM – 5:30 PM</span><br/>
+            Saturday &nbsp;&nbsp;&nbsp; <span class="info-mono">8:00 AM – 2:00 PM</span><br/>
+            Sunday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="info-mono">Closed</span>
+          </div>
+        </div>
+
+        <a href="https://www.google.com/maps?q=4700+Scyene+Road+Dallas+TX+75210" target="_blank" rel="noopener" class="btn btn-ghost btn-full">
+          GET DIRECTIONS
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 17L17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+
+      <!-- Form -->
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-row">
+          <label>
+            <span>Name<em>*</em></span>
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            <span>Email<em>*</em></span>
+            <input type="email" name="email" required />
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            <span>Phone</span>
+            <input type="tel" name="phone" />
+          </label>
+          <label>
+            <span>Vehicle / Engine</span>
+            <input type="text" name="vehicle" placeholder="e.g. 2006 Chevy 5.3L" />
+          </label>
+        </div>
+        <label class="form-full">
+          <span>How can we help?<em>*</em></span>
+          <textarea name="message" rows="5" required placeholder="Tell us about your build, part, or machine-shop job."></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary btn-full">
+          SEND INQUIRY
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="form-note" id="form-note">Form is a demo — for a real inquiry, please call <a href="tel:+12144264400">(214) 426-4400</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M20 6 V20 L30 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="20" cy="20" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">BLAINE'S</span>
+          <span class="brand-sub">MOTOR SUPPLY, INC.</span>
+        </div>
+      </div>
+      <p class="footer-tag">Rebuilt engines, parts, and machine-shop services. Dallas, Texas.</p>
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#engines">Rebuilt Engines</a>
+        <a href="#engines">Engine Parts</a>
+        <a href="#services">Machine Shop</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About BMS</a>
+        <a href="#manufacturers">Manufacturers</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <span>4700 Scyene Road</span>
+        <span>Dallas, TX 75210</span>
+        <a href="tel:+12144264400">(214) 426-4400</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="container footer-bar-inner">
+      <span>© <span id="year"></span> Blaine's Motor Supply, Inc. All rights reserved.</span>
+      <span class="footer-bar-right">BBB Accredited Since 1997 · Family Owned & Operated</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Blaine's Motor Supply — interactions */
+
+(function () {
+  'use strict';
+
+  // ---------- Year ----------
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ---------- Mobile nav ----------
+  var header = document.getElementById('site-header');
+  var toggle = document.getElementById('nav-toggle');
+  var mobileNav = document.getElementById('nav-mobile');
+
+  if (toggle && header) {
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('is-menu-open');
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+  }
+
+  // Close mobile nav when clicking a link
+  if (mobileNav) {
+    mobileNav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        header.classList.remove('is-menu-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // ---------- Header shadow on scroll ----------
+  var scrolled = false;
+  function onScroll() {
+    var isScrolled = window.scrollY > 6;
+    if (isScrolled !== scrolled) {
+      scrolled = isScrolled;
+      header.classList.toggle('is-scrolled', isScrolled);
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ---------- Contact form (demo) ----------
+  var form = document.getElementById('contact-form');
+  var note = document.getElementById('form-note');
+  if (form && note) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // basic client-side check
+      var name  = form.querySelector('[name="name"]');
+      var email = form.querySelector('[name="email"]');
+      var msg   = form.querySelector('[name="message"]');
+      if (!name.value.trim() || !email.value.trim() || !msg.value.trim()) {
+        note.textContent = 'Please fill the required fields (name, email, message).';
+        note.style.color = '#ff7a7a';
+        return;
+      }
+      form.classList.add('submitted');
+      note.innerHTML = 'Thanks — your inquiry is ready to send. (Demo: wire this to email or a form handler.)';
+      form.reset();
+    });
+  }
+
+  // ---------- Reveal on scroll ----------
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = (entry.target.dataset.delay || '0') + 'ms';
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.section-head, .capability, .service, .mfg-col, .badge, .about-visual')
+      .forEach(function (el, i) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(24px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.dataset.delay = (i % 6) * 60;
+        io.observe(el);
+      });
+
+    var style = document.createElement('style');
+    style.textContent = '.is-visible { opacity: 1 !important; transform: translateY(0) !important; }';
+    document.head.appendChild(style);
+  }
+})();
+
+</script>
+</body>
+</html>
